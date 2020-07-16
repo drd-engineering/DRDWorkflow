@@ -44,6 +44,19 @@ type Division struct {
 	Parent    *Division `gorm:"foreignkey:ParentID"`
 	Company   Company   `gorm:"foreignkey:CompanyID"`
 }
+type JobPosition struct {
+	ID         int `gorm:"primary_key"`
+	CreatedAt  time.Time
+	UpdatedAt  time.Time
+	DeletedAt  *time.Time
+	AssignedAt time.Time
+	Name       string
+	Level      int
+	DivisionID int
+	UserID     int
+	Division   Division `gorm:"foreignkey:DivisionID"`
+	User       User     `gorm:"foreignkey:UserID"`
+}
 type AppToken struct {
 	ID        int `gorm:"primary_key"`
 	CreatedAt time.Time

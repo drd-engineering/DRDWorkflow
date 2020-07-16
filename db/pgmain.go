@@ -40,7 +40,7 @@ func InitPostgre() {
 	}
 
 	db = conn
-	db.Debug().AutoMigrate(&User{}, &Company{}, &Division{}, &AppToken{}, &ApiLog{}, &ApiType{}, &Activity{}, &Workflow{}, &ActivityLink{}, &ActivityLog{}, &AuditTrails{})
+	db.Debug().AutoMigrate(&User{}, &Company{}, &Division{}, &JobPosition{}, &AppToken{}, &ApiLog{}, &ApiType{}, &Activity{}, &Workflow{}, &ActivityLink{}, &ActivityLog{}, &AuditTrails{})
 
 	company := Company{Name: "AIA", Email: "aia@aia.com", CreatedAt: time.Now()}
 	db.FirstOrCreate(&company)
